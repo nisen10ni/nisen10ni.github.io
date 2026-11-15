@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ESSAY — TAKAGI Kaede</title>
+<meta name="description" content="TAKAGI Kaede によるエッセイ。">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.essay-wrap{max-width:760px;margin:0 auto;padding:56px 32px 120px}
+.essay-back{display:inline-block;margin-bottom:28px;color:var(--tx);font-size:11px;letter-spacing:.2em;border-bottom:3px solid var(--ac);padding-bottom:2px}
+.essay-date{font-size:11px;letter-spacing:.24em;color:var(--mute);margin-bottom:12px}
+.essay-ttl{font-size:36px;font-weight:500;letter-spacing:.02em;margin-bottom:16px;line-height:1.5}
+.essay-lead{color:var(--sub);margin-bottom:32px;line-height:1.95}
+.essay-paper{background:var(--sf);border:1px solid var(--bd2);padding:36px 40px;line-height:2.05;font-size:15px}
+.essay-paper p{margin-bottom:20px}
+.essay-nav{display:flex;justify-content:space-between;margin-top:36px;font-size:11px;letter-spacing:.18em;color:var(--sub)}
+.essay-nav a{color:inherit;padding:10px 0;transition:color .2s ease}
+.essay-nav a:hover{color:var(--ink);background-image:linear-gradient(transparent 70%,var(--ac) 70%)}
+.essay-nav .disabled{color:var(--mute);opacity:.4;pointer-events:none}
+@media (max-width:640px){
+  .essay-wrap{padding:40px 18px 80px}
+  .essay-ttl{font-size:26px}
+  .essay-paper{padding:22px 20px;font-size:14px;line-height:1.95}
+}
+</style>
+</head>
+<body>
+<div class="app">
+<div class="essay-wrap" lang="ja">
+  <a class="essay-back" id="back" href="essays.html">← BACK TO ESSAYS</a>
+  <div class="essay-date" id="date"></div>
+  <h1 class="essay-ttl" id="ttl"></h1>
+  <div class="essay-lead" id="lead"></div>
+  <div class="essay-paper" id="paper"></div>
+  <div class="essay-nav">
+    <a id="prev" href="#"></a>
+    <a id="next" href="#"></a>
+  </div>
+</div>
+</div>
+<script src="assets/data.js"></script>
+<script src="assets/site.js"></script>
+<script>
+buildNav('essays');buildFooter();
+const lang=getLang();
+document.documentElement.lang=lang==='jp'?'ja':'en';
+
+const params=new URLSearchParams(location.search);
+const id=parseInt(params.get('id')||'1',10);
+const idx=ESSAYS.findIndex(e=>e.id===id);
+if(idx===-1){location.replace('essays.html');throw new Error('essay not found');}
+const e=ESSAYS[idx];
+document.title=e.title+' — TAKAGI Kaede';
+
+$('#date').textContent=e.date;
+$('#ttl').textContent=e.title;
+$('#lead').textContent=e.lead||'';
+$('#paper').innerHTML=e.body.map(x=>`<p>${x.replace(/\n/g,'<br>')}</p>`).join('');
+
+// ESSAYS は新しい順。「前」= ひとつ古いエッセイ、「次」= ひとつ新しいエッセイ。
+const older=ESSAYS[idx+1],newer=ESSAYS[idx-1];
+const prevEl=$('#prev'),nextEl=$('#next');
+if(older){prevEl.href='essay.html?id='+older.id;prevEl.textContent='← '+older.title;}
+else{prevEl.classList.add('disabled');prevEl.textContent='← 最初のエッセイです';}
+if(newer){nextEl.href='essay.html?id='+newer.id;nextEl.textContent=newer.title+' →';}
+else{nextEl.classList.add('disabled');nextEl.textContent='最新のエッセイです →';}
+</script>
+</body>
+</html>

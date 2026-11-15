@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ESSAYS — TAKAGI Kaede</title>
+<meta name="description" content="TAKAGI Kaede によるエッセイ・ノート。">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="app">
+<section class="sec">
+  <div class="head"><h2 id="essayTitle"></h2><div class="eyebrow">— ESSAYS</div></div>
+  <div class="essayIntro" id="essayIntro"></div>
+  <div class="essays" id="essayList"></div>
+</section>
+</div>
+<script src="assets/data.js"></script>
+<script src="assets/site.js"></script>
+<script>
+buildNav('essays');buildFooter();
+const lang=getLang(),TT=T[lang];
+$('#essayTitle').textContent=TT.titles.essays;
+$('#essayIntro').textContent=TT.essayIntro;
+document.documentElement.lang=lang==='jp'?'ja':'en';
+
+const g=$('#essayList');
+ESSAYS.forEach(e=>{
+    g.insertAdjacentHTML('beforeend',
+    `<a href="essay.html?id=${e.id}" lang="ja">
+       <div class="date">${e.date}</div>
+       <div><div class="tt">${e.title}</div><div class="ex">${e.lead||''}</div></div>
+       <div class="tag">ESSAY</div>
+     </a>`);
+});
+</script>
+</body>
+</html>

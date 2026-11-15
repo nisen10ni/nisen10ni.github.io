@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CONTACT — TAKAGI Kaede</title>
+<meta name="description" content="TAKAGI Kaede へのお問い合わせ・SNS。">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="app">
+<section class="sec contact">
+  <div class="head"><h2 id="contactTitle"></h2><div class="eyebrow">— CONTACT</div></div>
+  <div class="contactLead" id="contactLead"></div>
+  <div id="contactList"></div>
+</section>
+</div>
+<script src="assets/data.js"></script>
+<script src="assets/site.js"></script>
+<script>
+buildNav('contact');buildFooter();
+const lang=getLang(),TT=T[lang];
+$('#contactTitle').textContent=TT.titles.contact;
+$('#contactLead').textContent=TT.contactLead;
+document.documentElement.lang=lang==='jp'?'ja':'en';
+
+const list=$('#contactList');
+TT.contact.forEach(([k,v])=>{
+  const isExt=v.href.startsWith('http');
+  list.insertAdjacentHTML('beforeend',
+    `<div class="row">
+       <div class="lb">${k}</div>
+       <div class="vl"><a href="${v.href}"${isExt?' target="_blank" rel="noopener"':''}>${v.label}</a></div>
+     </div>`);
+});
+</script>
+</body>
+</html>
