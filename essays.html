@@ -39,7 +39,7 @@ ESSAYS.forEach(e=>{
     g.insertAdjacentHTML('beforeend',
     `<a href="essay.html?id=${e.id}" lang="ja">
        <div class="date">${e.date}</div>
-       <div><div class="tt">${e.title}</div><div class="ex">${firstSentence(e.body)}</div></div>
+       <div><div class="tt">${e.title}</div><div class="ex">${firstSentence(e.body)}…</div></div>
        <div class="tag">ESSAY</div>
      </a>`);
 });
