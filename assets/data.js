@@ -4,21 +4,17 @@
 window.T={
  jp:{
   nav:{home:'HOME',about:'ABOUT',works:'WORKS',essays:'ESSAYS',contact:'CONTACT'},
-  titles:{about:'プロフィール',works:'作品一覧',essays:'エッセイ',contact:'お問い合わせ'},
+  titles:{about:'ABOUT',works:'WORKS',essays:'ESSAYS',contact:'CONTACT'},
   name:'高木 楓',
   subname:'TAKAGI Kaede / b. 2001, Tokyo',
   portraitAlt:'高木 楓のポートレート',
-  bio:"2001年生まれ。口と声、そこを通っていく自他の言葉を手がかりに、「口答え」のあり方を探求している。武蔵野美術大学造形学部油絵学科を卒業後、出版社で取材と執筆に携わり現在はマーケティングを担当。逆再生、遅延、役の入れ替えといった操作を用い、映像、パフォーマンス、エッセイなど多様な形式で制作を行う。",
+  bio:'幼少期や生い立ちの影響から、自由になりたいと思い続け、枠組みや既存のルールから逸脱もしくは反抗するような映像表現、身体表現、文章表現を行う。',
   all:'ALL',
-  contactLead:'制作・展示・寄稿・コラボレーションのご相談は下記までお気軽にご連絡ください。',
-  essayIntro:'制作の周辺で考えたこと、読んだ本、日常のなかで拾った断片について書いています。作品と地続きの、もうひとつの思考の場所です。',
-  scrollHint:'SCROLL',scrollHintB:'コンセプトを読む ↓',
   moreLabel:'解説',
   exLabel:'EXHIBITION',
   dl:[
    ['PROFILE',['2001　東京都出身','2023　武蔵野美術大学油絵学科油絵専攻 卒業','現在、都内出版社にて勤務']],
-   ['EXHIBITIONS',['2022　「色和感 -いわかん-」新宿眼科画廊（東京 新宿）','2023　「令和四年度 武蔵野美術大学卒業・修了制作展」鷹の台キャンパス（東京 小平）','2023　「令和4年度 第46回 東京五美術大学連合卒業・修了制作展」国立新美術館（東京 六本木）','2023　「第二回 立川学生映画祭」立川アートランド（東京 立川）','2025　蜂谷円悠・高木楓 二人展「しずむ目 A sinking gaze」KOGANEI ART SPOT シャトー2F（東京 小金井）','2026　「喧々兼現実実験」デザインフェスタギャラリー原宿 EAST館（東京 原宿）']],
-   ['ACTIVITIES',['2021　立川アートランド 運営メンバー','2024　大塚澪音 個展「Jet the phantom」DMデザイン 他','2025　松橋萌 修了制作「キャンプのレシピ」ZINEデザイン協力','2025　蜂谷円悠・高木楓 二人展「しずむ目 A sinking gaze」デザイン全般','2026　エッセイ集『備忘録』発行','現職において広告、販促物、パンフレット等のデザイン・編集・ライティング','WEBメディア『STORY AGE』記事執筆','WEBメディア『LOCAL GROWTH CONSORTIUM』記事執筆']]
+   ['EXHIBITIONS',['2022　「色和感 -いわかん-」新宿眼科画廊（東京 新宿）','2023　「令和四年度 武蔵野美術大学卒業・修了制作展」鷹の台キャンパス（東京 小平）','2023　「令和4年度 第46回 東京五美術大学連合卒業・修了制作展」国立新美術館（東京 六本木）','2023　「第二回 立川学生映画祭」立川アートランド（東京 立川）','2025　蜂谷円悠・高木楓 二人展「しずむ目 A sinking gaze」KOGANEI ART SPOT シャトー2F（東京 小金井）','2026　「喧々兼現実実験」デザインフェスタギャラリー原宿 EAST館（東京 原宿）']]
   ],
   contact:[
    ['E-MAIL',{label:'nisen10ni@gmail.com',href:'mailto:nisen10ni@gmail.com'}],
@@ -28,21 +24,17 @@ window.T={
  },
  en:{
   nav:{home:'HOME',about:'ABOUT',works:'WORKS',essays:'ESSAYS',contact:'CONTACT'},
-  titles:{about:'About',works:'Works',essays:'Essays',contact:'Contact'},
+  titles:{about:'ABOUT',works:'WORKS',essays:'ESSAYS',contact:'CONTACT'},
   name:'TAKAGI Kaede',
   subname:'高木 楓 / b. 2001, Tokyo',
   portraitAlt:'Portrait of TAKAGI Kaede',
-  bio:'Born in 2001. Taking the mouth and the voice, and the words of self and others that pass through them, as clues, Takagi explores what it means to “talk back.” After graduating from the Department of Painting (Oil Painting), College of Art and Design, Musashino Art University, Takagi worked on interviews and writing at a publishing company and now works in marketing. Using operations such as reverse playback, delay and the swapping of roles, Takagi works across video, performance, essays and other forms.',
+  bio:'Influenced by early childhood and upbringing, Takagi has continued to long for freedom, creating video, bodily and written expression that deviates from or rebels against frameworks and existing rules.',
   all:'ALL',
-  contactLead:'Feel free to reach out for collaborations, exhibitions, writing, or commissions.',
-  essayIntro:'Notes and essays on making, reading, and fragments gathered from daily life. The essays are available in Japanese only.',
-  scrollHint:'SCROLL',scrollHintB:'Read the concept ↓',
   moreLabel:'Commentary',
   exLabel:'EXHIBITION',
   dl:[
    ['PROFILE',['Born in Tokyo, 2001','B.A., Oil Painting, Department of Painting, Musashino Art University, 2023','Currently works at a publishing company in Tokyo']],
-   ['EXHIBITIONS',['2022 “Iwakan,” Shinjuku Ophthalmologist Gallery, Tokyo','2023 Musashino Art University Graduation and Completion Works Exhibition (FY2022), Takanodai Campus, Kodaira','2023 The 46th Tokyo Five Art Universities Graduation and Completion Works Exhibition (FY2022), The National Art Center, Tokyo','2023 2nd Tachikawa Student Film Festival, Tachikawa Artland, Tachikawa','2025 “A sinking gaze,” two-person exhibition with Mayu Hachiya, KOGANEI ART SPOT Château 2F, Koganei','2026 “Kenken ken Genjitsu Jikken,” Design Festa Gallery Harajuku EAST, Tokyo']],
-   ['ACTIVITIES',['2021 Management member, Tachikawa Artland','2024 DM design and more for Reon Otsuka’s solo exhibition “Jet the phantom”','2025 ZINE design support for Moe Matsuhashi’s graduation project “Camp Recipes”','2025 Overall design for the two-person exhibition “A sinking gaze”','2026 Published the essay collection Bibouroku (Memorandum)','Design, editing and copywriting of advertisements, promotional materials and brochures at current workplace','Writer for the web media STORY AGE','Writer for the web media LOCAL GROWTH CONSORTIUM']]
+   ['EXHIBITIONS',['2022 “Iwakan,” Shinjuku Ophthalmologist Gallery, Tokyo','2023 Musashino Art University Graduation and Completion Works Exhibition (FY2022), Takanodai Campus, Kodaira','2023 The 46th Tokyo Five Art Universities Graduation and Completion Works Exhibition (FY2022), The National Art Center, Tokyo','2023 2nd Tachikawa Student Film Festival, Tachikawa Artland, Tachikawa','2025 “A sinking gaze,” two-person exhibition with Mayu Hachiya, KOGANEI ART SPOT Château 2F, Koganei','2026 “Kenken ken Genjitsu Jikken,” Design Festa Gallery Harajuku EAST, Tokyo']]
   ],
   contact:[
    ['E-MAIL',{label:'nisen10ni@gmail.com',href:'mailto:nisen10ni@gmail.com'}],
@@ -59,8 +51,8 @@ window.WORKS=[
   "id": "biboroku",
   "year": 2026,
   "tag": [
-   "書籍",
-   "BOOK"
+   "ZINE",
+   "ZINE"
   ],
   "title": [
    "備忘録",
@@ -875,7 +867,6 @@ window.ESSAYS=[
   "id": 8,
   "date": "2026.10.20",
   "title": "世間身体",
-  "lead": "もう一度始める筋トレと、ケーキ屋のアルバイトで出会った後輩たち、そして就職活動について。",
   "body": [
    "　ふと、筋トレをしてみようと思う。いや、正確にはもう一度なのだけれども。",
    "　もし久しく会っていない友人に今の言葉を伝えたとしたら、あの楓が！？ みたいな反応をされると思う。しかも、もう一度ってことは以前もやってたの？と重ねて反応される気もする。その質問に答えるとしたら、「その通りで、以前もやっていて1年ぶりに再開するつもり」と答えるだろう。昔から線が細くて、食事もあまり好きではなかった。外で体を動かすことは中学生以降は特に苦手になってしまい、集団でのスポーツは尚更だった。だから、基礎体力をつける行為を能動的に継続していた時期があることは自分でも驚きなのである。ただ、幼い頃から水泳には通っていたから水泳の授業だけは好きだったけれども。",
@@ -896,7 +887,6 @@ window.ESSAYS=[
   "id": 7,
   "date": "2026.09.27",
   "title": "暦がえし",
-  "lead": "深夜2時に目覚めて出かけた夜と、金縛りの夢、そして父の還暦について。",
   "body": [
    "　2時ごろに目覚めてしまった原因は、PCに接続されたモニターが省電力モードになっておらず、スタート画面がずっと表示されたままだからであった。本体のPCがスリープモードに入ればモニターは信号なしと判断して画面から光が消えるが、本体PCを閉じてしまうとむしろ稼働したままになってしまうらしい。しかもランダムに変わる壁紙は、好んで青い空の風景写真ばかりにしていた。さらに、このPCモニターは接続されている間、背面の4つ角が光る仕様になっている。近未来を象徴するようなまさにライトブルー。寝ているロフトの手すりの下から思いっきり漏れて睡眠を邪魔してきている。自他ともに、いやPCと共にスリープモードに入ることができなかったわけだ。休日の夜更かしは大歓迎だが、平日ともなると話は変わってくる。普段は社会の一員として働いているわけだから、睡眠不足で仕事に支障が出るのはごめんだ。\n　もう一度寝るか……。\n　とは言いつつも、眠気を感じない。綺麗に覚めている気がする。レム睡眠とノンレム睡眠が切り替わるタイミングで起きるとスッキリとした目覚めになると聞いたことがあるが、おそらくそのタイミングだったのだろう。横目に時計を確認する。出勤まで5時間と言ったところか。起きてすることもないが一旦睡眠妨害の原因を解消するべきだ。ロフトを降りてデスクに向かい、ようやくPCの電源を落としモニターも消える。部屋が狭くて机の角に足をぶつけて痛い。じゃあ、近々コーナーガードを買いに100均に行くべきだと思った。現在時刻は2時を回っている。そういえばと、24時間営業の100円ローソンにダイソーコーナーが存在していることに気づいた。さすが都心部だなぁと思う。そして100円ローソンは自転車で10分もかからない位の場所にある。じゃあ今行くしかないと決断した。",
    "　まだ実家に住んでいた頃、夜に出歩きたいとつくづく思っていた。だが、親が心配するのでいつもできなかった。高校、大学と年齢が高くなるにつれ、帰りが遅くなることも増えていく。一人での帰路が楽しくて違う道を探して遠回りでよく帰っていた。社会人になり会社の帰りがかなり遅くなった時、最寄駅から家までの帰路で、住宅街が近づくにつれ人がほとんどいなくなっていく。自転車を漕ぎながら感じるのは、満員で乗り換えるターミナル駅とのコントラストだった。1人だけの帰り道で、夏は湿気で余計に暑く、冬は寒々しくて余計に寂しい帰り道。何千何百回と繰り返しているが写真に収めたことはほとんどなかった。ここは実家ではないけれども、もし撮っておいたら後で見返すと面白いことがあるかもしれない。往復で繰り返していく景色を記憶のまま留めておくと悪い癖で感傷に浸るだけで終わってしまう。そこまで撮る気はなかったが、せっかくなのでカメラを持って外に出ることにした。今の時間に出かけても、もちろん心配されることもないのだから。",
@@ -911,7 +901,6 @@ window.ESSAYS=[
   "id": 6,
   "date": "2026.08.16",
   "title": "YからZ",
-  "lead": "社長からの伝言、隣の席の先輩、そして「Z世代」と呼ばれることについて。",
   "body": [
    "　車内を見れば、どこも見ていない顔で立ち、背広を着たサラリーマンがどこもかしこも立っている。私は、今日も降りそうな人に目をつけ、拝島駅で入れ替わり、さっと席に座る。朝日が青く変わる中、ふと目を横にやると何が面白いのかわからずにでかでかときな臭いバナー広告が出現するWEB記事や、意味のわからない海外のショート動画、夢の世界のようなパズルゲームで周りは時間を潰していた。私は通勤で毎日1時間以上電車に乗っていて、まだ引っ越す前、平日に何度もこの光景を繰り返し見ていた。",
    "＊＊＊",
@@ -939,7 +928,6 @@ window.ESSAYS=[
   "id": 5,
   "date": "2026.07.23",
   "title": "視、心、関心",
-  "lead": "中野での一人暮らしと、自分のことをほとんど語らない父、そして自転車の記憶について。",
   "body": [
    "　今年の4月の後半、中野で一人暮らしを始めた。きっかけはなんてことはない、社会人になって1年半が過ぎて、お金が貯まったからというありふれた理由だった。あとは通勤が遠かったこともある。いや、これが本当の理由かもしれない。東京の西から新宿方面へ、毎日ドアtoドアで1時間40分。往復3時間越え。座る機会を逃せば1時間立ちっぱなし。これはさすがに遠かった。そして、両親とずっと住んできた生活から、どこか新しさを見出せないことへの退屈さをもうとっくに感じていたのだと思う。",
    "　東京都は、世界的に見ても人口密度の高い小さい都市である。その形は細長く、新宿駅か東京駅を基準に西側と東側と分けられる。私は西側の中でもかなり西側に生まれ育って、都内へのアクセスは不便だった。それもそのはず、父はほぼ最西端の出身で、母親もかなり西側の出身だった。互いの勤務地も西側で、当然私が生まれ育ったのもかなりの西側だった。そのため出身地を尋ねられて返答しても「ん？」という反応をされる。同じ東京都出身の人でもだ。横田基地の近くであることや、青梅方面ということを追加で伝えてからようやく理解されるような場所だ。そんな絶妙に不便な家から、離れてみたかったのだと思う。",
@@ -956,7 +944,6 @@ window.ESSAYS=[
   "id": 4,
   "date": "2026.06.28",
   "title": "集団という義務",
-  "lead": "集団運動が苦手だった自分と、水泳だけは続けていた10年間について。",
   "body": [
    "　Yから\n　「もし運動神経抜群で何でもできますだったら部活どこはいる？おれ、バレーボール」\n　とLINEグループの通知が来た。",
    "　私は、\n  「野球部かな。ガチのホモソって経験してみたい」と返答した。",
@@ -988,7 +975,6 @@ window.ESSAYS=[
   "id": 3,
   "date": "2026.06.03",
   "title": "会社の人事部はnoteとか見るのか？",
-  "lead": "人との距離感、いじりと敬語、地下アイドル、そして「死ねばいい」という歌詞について。",
   "body": [
    "　告白をします。\n　告白をします。",
    "　人との関わり方をどうすれば良いのでしょうか。俺にはわからないんです。たとえば、採用・人事・広報とかやっている人ってすごいですよね。俺も入った会社の人事担当の人の経歴がすごくて、理系の院卒なのにMBA取るために海外行った人で。その人が一次面接の面接官だったんですけど、その人、古口さん。面接受けた時にさ普段より少し固い対話をしているなっていう印象だった。それで一次面接通過になったの。なんか舞いあがっちゃったよ。さらにさらに進んでいくと、なんか気づいたら内定もらってた。自分のこと話しただけなのに内定貰っちゃった気分。まあ色々準備してたけどさ。思い返せばすごくいい人だった。というか真面目だった。でも真面目に生きてきて、要領のいい人を真似してきたんだろうなってタイプだった。",
@@ -1011,7 +997,6 @@ window.ESSAYS=[
   "id": 2,
   "date": "2026.03.30",
   "title": "三月になると思い出すこと",
-  "lead": "10年前の高校入学から、卒業式で泣きじゃくった担任、そして悲観の色について。",
   "body": [
    "  「ありがとうございます。ありがとうございます。」\n  自分の高校生活最後の日。つまりは卒業式。真っ赤に目を腫らしている担任が発した言葉をいまだに覚えている。\n  「──────」\n　もうあまりにも泣きまくっていたから、言葉としては聞き取れなかったけれど、体に留めておけないような数々の感情が涙として溢れてしまうんだろうと彼を見て思った。",
    "　＊＊＊",
@@ -1029,7 +1014,6 @@ window.ESSAYS=[
   "id": 1,
   "date": "2026.02.13",
   "title": "一人になる",
-  "lead": "一人暮らしを決めた日と、『プラダを着た悪魔』と『女王の教室』のラストシーンの符号。",
   "body": [
    "　2月3日\n　一人暮らしを決めた。前日に内見の予約をして、新宿駅から歩いて 3分位のところにある不動産屋に行った。おおまかな場所はもう決めていた。会社まで自転車で行けて、そんなに高くなくって、新宿よりは西側がいいと思っていた。",
    "　予約をしていた不動産屋に着いて、条件に合う部屋を探し続けて、気づいたら3時間経っていた。\n　私はその中で自分が想定していたよりも少し高い価格の 1つの部屋を決めた。確定ではない。入居時期が 4月下旬と少し遅いことがネックだった。見積もりだけもらって不動産屋を後にした。",

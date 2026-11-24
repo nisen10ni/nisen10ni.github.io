@@ -71,6 +71,8 @@
 
   // ---------- Carousel (枚数は作品ごとの images 配列で決まる) ----------
   const stripTags=s=>s.replace(/<br\s*\/?>/g,' / ').replace(/<[^>]+>/g,'');
+  // サムネイルは images/作品ID/t/ にある縮小版（幅240px）を使う
+  const thumbSrc=src=>src.replace(/\/([^\/]+)$/,'/t/$1');
   function buildCarousel(images,alt){
     const n=images.length;
     return `<div class="hero" id="hero">
@@ -79,20 +81,26 @@
       <button class="gbtn gnext" id="gnext" aria-label="Next">›</button>
       <div class="gcount" id="gcount">1 / ${n}</div>`:''}
       </div>
+      ${n>1?`<div class="gthumbs" id="gthumbs">
+        ${images.map((im,i)=>`<button type="button" class="gthumb" data-i="${i}" aria-label="${i+1} / ${n}"><img src="${thumbSrc(im.src)}" alt="" loading="lazy"></button>`).join('')}
+      </div>`:''}
       <div class="gcap" id="gcap"></div>`;
   }
   function bindCarousel(images,jp){
     const n=images.length;let slide=0;
-    const imgs=$$('#hero img');
+    const imgs=$$('#hero img'),thumbs=$$('#gthumbs .gthumb'),strip=$('#gthumbs');
     const setSlide=k=>{
       slide=(k+n)%n;
       imgs.forEach((im,i)=>im.classList.toggle('on',i===slide));
+      thumbs.forEach((b,i)=>{b.classList.toggle('on',i===slide);b.setAttribute('aria-current',i===slide?'true':'false');});
+      if(strip&&thumbs[slide]){const b=thumbs[slide];strip.scrollTo({left:b.offsetLeft-(strip.clientWidth-b.offsetWidth)/2,behavior:'smooth'});}
       if($('#gcount'))$('#gcount').textContent=(slide+1)+' / '+n;
       const c=images[slide].cap||['',''];$('#gcap').textContent=c[jp?0:1]||'';
     };
     if(n>1){
       $('#gprev').onclick=e=>{e.stopPropagation();setSlide(slide-1);};
       $('#gnext').onclick=e=>{e.stopPropagation();setSlide(slide+1);};
+      thumbs.forEach(b=>b.onclick=()=>setSlide(+b.dataset.i));
     }
     setSlide(0);
   }
@@ -113,7 +121,6 @@
         </div>
         <div class="mtag">${jp?'カテゴリ':'CATEGORY'}<b>${w.tag[jp?0:1]}</b></div>
       </div>
-      <div class="scroll-hint">${t.scrollHint}<b>${t.scrollHintB}</b></div>
       <div class="mbody">${paras(main)}</div>
       ${more?`<div class="mmore"><div class="mmore-k">${t.moreLabel}</div><div class="mbody">${paras(more)}</div></div>`:''}
       ${ex?`<div class="mex"><b>${t.exLabel}</b>${ex}</div>`:''}`;

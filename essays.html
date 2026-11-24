@@ -10,8 +10,7 @@
 <body>
 <div class="app">
 <section class="sec">
-  <div class="head"><h2 id="essayTitle"></h2><div class="eyebrow">— ESSAYS</div></div>
-  <div class="essayIntro" id="essayIntro"></div>
+  <div class="head"><h2 id="essayTitle"></h2></div>
   <div class="essays" id="essayList"></div>
 </section>
 </div>
@@ -21,15 +20,26 @@
 buildNav('essays');buildFooter();
 const lang=getLang(),TT=T[lang];
 $('#essayTitle').textContent=TT.titles.essays;
-$('#essayIntro').textContent=TT.essayIntro;
 document.documentElement.lang=lang==='jp'?'ja':'en';
 
+// 一覧の下には本文の最初の一文を表示（長い場合は CSS で自動的に「…」）
+function firstSentence(body){
+  const t=body.join('\n').split('\n').map(l=>l.replace(/^[\s\u3000]+/,'')).filter(Boolean).join('\n');
+  let depth=0;
+  for(let i=0;i<t.length;i++){
+    const c=t[i];
+    if(c==='「'||c==='『'||c==='（')depth++;
+    else if((c==='」'||c==='』'||c==='）')&&depth>0){depth--;if(depth===0&&t[i+1]==='\n')return t.slice(0,i+1).replace(/\n/g,' ');}
+    else if(depth===0&&'。！？'.includes(c))return t.slice(0,i+1).replace(/\n/g,' ');
+  }
+  return t.replace(/\n/g,' ');
+}
 const g=$('#essayList');
 ESSAYS.forEach(e=>{
     g.insertAdjacentHTML('beforeend',
     `<a href="essay.html?id=${e.id}" lang="ja">
        <div class="date">${e.date}</div>
-       <div><div class="tt">${e.title}</div><div class="ex">${e.lead||''}</div></div>
+       <div><div class="tt">${e.title}</div><div class="ex">${firstSentence(e.body)}</div></div>
        <div class="tag">ESSAY</div>
      </a>`);
 });

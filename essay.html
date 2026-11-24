@@ -10,8 +10,7 @@
 .essay-wrap{max-width:760px;margin:0 auto;padding:56px 32px 120px}
 .essay-back{display:inline-block;margin-bottom:28px;color:var(--tx);font-size:11px;letter-spacing:.2em;border-bottom:3px solid var(--ac);padding-bottom:2px}
 .essay-date{font-size:11px;letter-spacing:.24em;color:var(--mute);margin-bottom:12px}
-.essay-ttl{font-size:36px;font-weight:500;letter-spacing:.02em;margin-bottom:16px;line-height:1.5}
-.essay-lead{color:var(--sub);margin-bottom:32px;line-height:1.95}
+.essay-ttl{font-size:36px;font-weight:500;letter-spacing:.02em;margin-bottom:32px;line-height:1.5}
 .essay-paper{background:var(--sf);border:1px solid var(--bd2);padding:36px 40px;line-height:2.05;font-size:15px}
 .essay-paper p{margin-bottom:20px}
 .essay-nav{display:flex;justify-content:space-between;margin-top:36px;font-size:11px;letter-spacing:.18em;color:var(--sub)}
@@ -31,7 +30,6 @@
   <a class="essay-back" id="back" href="essays.html">← BACK TO ESSAYS</a>
   <div class="essay-date" id="date"></div>
   <h1 class="essay-ttl" id="ttl"></h1>
-  <div class="essay-lead" id="lead"></div>
   <div class="essay-paper" id="paper"></div>
   <div class="essay-nav">
     <a id="prev" href="#"></a>
@@ -55,7 +53,6 @@ document.title=e.title+' — TAKAGI Kaede';
 
 $('#date').textContent=e.date;
 $('#ttl').textContent=e.title;
-$('#lead').textContent=e.lead||'';
 $('#paper').innerHTML=e.body.map(x=>`<p>${x.replace(/\n/g,'<br>')}</p>`).join('');
 
 // ESSAYS は新しい順。「前」= ひとつ古いエッセイ、「次」= ひとつ新しいエッセイ。

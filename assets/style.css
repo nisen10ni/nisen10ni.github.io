@@ -45,14 +45,14 @@ a{text-decoration:none}
 .head h2{font-size:30px;font-weight:500}
 .eyebrow{font-size:11px;letter-spacing:.28em;color:var(--mute)}
 
-.aboutgrid{display:grid;grid-template-columns:240px 1fr;gap:44px}
+.aboutgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:start}
 .portrait{height:300px;background:var(--bg2);border:1px solid var(--bd2);display:flex;
   align-items:center;justify-content:center;flex-direction:column;color:var(--mute);
   letter-spacing:.2em;font-size:11px}
 .portrait small{font-size:9px;letter-spacing:.12em;margin-top:6px}
 .portrait.has-img{height:auto;display:block;background:none;border:none}
-.portrait img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:82% 50%}
-.portrait.has-img small{display:block;color:var(--mute)}
+/* 横長の写真をトリミングせず元の比率で表示 */
+.portrait img{width:100%;height:auto}
 .bio{line-height:1.95;margin-bottom:30px;max-width:720px}
 .about h3{font-size:28px;font-weight:500}
 .subname{color:var(--sub);font-size:13px;letter-spacing:.1em;margin:6px 0 26px}
@@ -81,7 +81,6 @@ a{text-decoration:none}
 .card .csub{font-size:11px;color:var(--sub);letter-spacing:.16em;margin-top:4px}
 .card .cyear{font-size:11px;color:var(--mute);letter-spacing:.22em}
 
-.essayIntro,.contactLead{max-width:760px;color:var(--sub);line-height:1.95;margin-bottom:32px}
 
 .essays a{color:inherit;display:grid;grid-template-columns:110px 1fr 90px;gap:22px;
   padding:20px 4px;border-bottom:1px solid var(--bd2);transition:background .2s ease, padding .25s ease}
@@ -89,7 +88,8 @@ a{text-decoration:none}
 .essays a:hover .tt{background-image:linear-gradient(transparent 62%,var(--ac) 62%);background-size:100% 100%}
 .essays .date,.essays .tag{font-size:10px;color:var(--mute);letter-spacing:.16em}
 .essays .tt{font-size:17px;font-weight:500;transition:background .3s ease}
-.essays .ex{color:var(--sub);font-size:12px;margin-top:6px}
+.essays .ex{color:var(--sub);font-size:12px;margin-top:6px;
+  display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1;overflow:hidden;text-overflow:ellipsis}
 .contact .row{display:grid;grid-template-columns:140px 1fr;gap:16px;padding:15px 0;border-bottom:1px solid var(--bd2)}
 .contact .lb{font-size:10px;color:var(--mute);letter-spacing:.24em}
 .contact .vl a{color:inherit}
@@ -99,14 +99,15 @@ a{text-decoration:none}
 
 .modal{position:fixed;inset:0;z-index:100;display:none;overflow:hidden}
 .modal.show{display:block}
-.mbg{position:absolute;inset:0;background:rgba(235,235,235,.15);
-  backdrop-filter:blur(22px) saturate(1.05);-webkit-backdrop-filter:blur(22px) saturate(1.05)}
+/* 背景はぼかした上に白を重ねて、文字を読みやすくする */
+.mbg{position:absolute;inset:0;background:rgba(244,244,244,.84);
+  backdrop-filter:blur(24px) saturate(.9);-webkit-backdrop-filter:blur(24px) saturate(.9)}
 .msheet{position:absolute;inset:0;overflow:auto;scroll-behavior:smooth;-webkit-overflow-scrolling:touch}
 .mclose{position:fixed;right:24px;top:22px;width:44px;height:44px;border-radius:50%;
-  border:1px solid rgba(255,255,255,.65);background:rgba(255,255,255,.35);color:#fff;
+  border:1px solid rgba(0,0,0,.18);background:rgba(255,255,255,.8);color:var(--ink);
   font-size:22px;line-height:1;cursor:pointer;z-index:5;backdrop-filter:blur(4px);
   transition:background .25s ease, transform .25s ease}
-.mclose:hover{background:rgba(255,255,255,.55);transform:rotate(90deg)}
+.mclose:hover{background:#fff;transform:rotate(90deg)}
 .minner{max-width:1080px;margin:0 auto;padding:88px 32px 120px;position:relative;z-index:2}
 .hero{position:relative;aspect-ratio:16/10;background:var(--bg2);border:1px solid rgba(255,255,255,.4);
   overflow:hidden;box-shadow:0 40px 90px -30px rgba(0,0,0,.5)}
@@ -115,6 +116,14 @@ a{text-decoration:none}
 .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity .35s ease;background:#111}
 .hero img.on{opacity:1;z-index:1}
 .hero .gbtn,.hero .gcount{z-index:2}
+/* 写真の下のサムネイル列（クリックでその写真へ） */
+.gthumbs{position:relative;display:flex;gap:8px;margin-top:14px;padding:4px 2px 6px;
+  overflow-x:auto;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.gthumb{flex:0 0 auto;width:72px;height:54px;padding:0;border:2px solid transparent;background:var(--bg2);
+  cursor:pointer;opacity:.55;transition:opacity .2s ease, border-color .2s ease}
+.gthumb img{width:100%;height:100%;object-fit:cover}
+.gthumb:hover{opacity:.9}
+.gthumb.on{opacity:1;border-color:var(--ink)}
 .gcap{min-height:1.6em;margin-top:12px;font-size:11px;letter-spacing:.08em;color:var(--sub);text-align:center}
 .gbtn{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;
   border:none;background:rgba(255,255,255,.6);color:var(--ink);cursor:pointer;
@@ -129,9 +138,7 @@ a{text-decoration:none}
 .mmeta .msub{font-size:12px;color:var(--sub);letter-spacing:.16em;margin-top:8px}
 .mmeta .mtag{font-size:10px;letter-spacing:.28em;color:var(--mute);text-align:right;min-width:120px}
 .mtag b{display:block;font-size:13px;color:var(--ink);letter-spacing:.08em;font-weight:500;margin-top:4px}
-.scroll-hint{margin:28px auto 8px;text-align:center;font-size:10px;letter-spacing:.32em;color:var(--sub)}
-.scroll-hint b{display:block;margin-top:8px;font-size:14px;color:var(--ink)}
-.mbody{margin-top:52px;max-width:720px;margin-left:auto;margin-right:auto;
+.mbody{margin-top:40px;max-width:720px;margin-left:auto;margin-right:auto;
   color:var(--ink);line-height:2.05;font-size:15px;white-space:pre-wrap}
 .mbody p{margin-bottom:18px}
 .mmore{max-width:720px;margin:40px auto 0;padding-top:28px;border-top:1px solid rgba(0,0,0,.15)}
@@ -144,7 +151,7 @@ a{text-decoration:none}
 
 @media (max-width:900px){
   .aboutgrid{grid-template-columns:1fr}
-  .portrait.has-img{max-width:320px}
+  .aboutgrid{gap:32px}
   .cards{grid-template-columns:1fr}
   .mmeta .mt{font-size:28px}
   .minner{padding:72px 20px 90px}
@@ -158,6 +165,7 @@ a{text-decoration:none}
   .ct .name{font-size:26px}
   .dl,.contact .row,.essays a{grid-template-columns:1fr;gap:6px}
   .yearttl{font-size:40px}
+  .gthumb{width:56px;height:42px}
   .mbody{font-size:14px;line-height:1.95}
   .mmeta{flex-direction:column;align-items:flex-start;gap:12px}
   .mmeta .mt{font-size:22px;line-height:1.5}

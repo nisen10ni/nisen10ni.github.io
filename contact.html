@@ -10,8 +10,7 @@
 <body>
 <div class="app">
 <section class="sec contact">
-  <div class="head"><h2 id="contactTitle"></h2><div class="eyebrow">— CONTACT</div></div>
-  <div class="contactLead" id="contactLead"></div>
+  <div class="head"><h2 id="contactTitle"></h2></div>
   <div id="contactList"></div>
 </section>
 </div>
@@ -21,7 +20,6 @@
 buildNav('contact');buildFooter();
 const lang=getLang(),TT=T[lang];
 $('#contactTitle').textContent=TT.titles.contact;
-$('#contactLead').textContent=TT.contactLead;
 document.documentElement.lang=lang==='jp'?'ja':'en';
 
 const list=$('#contactList');
