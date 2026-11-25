@@ -39,7 +39,7 @@ TT.dl.forEach(([k,vals])=>{
   let prev='';
   const rows=vals.map(v=>{
     const m=v.match(/^(\d{4})[\s　]+(.*)$/);
-    const y=m?m[1]:'', txt=m?m[2]:v;
+    const y=m?m[1]:'', txt=(m?m[2]:v).replace(/^([「『（])/,'<span class="openp">$1</span>');
     const show=y&&y!==prev?y:''; if(y)prev=y;
     return `<div class="cvrow"><div class="cvy">${show}</div><div class="cvt">${txt}</div></div>`;
   }).join('');

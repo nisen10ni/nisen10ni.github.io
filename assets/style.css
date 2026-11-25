@@ -66,6 +66,9 @@ a{text-decoration:none}
 .cv h4:first-child{margin-top:0}
 .cvrow{display:grid;grid-template-columns:72px 1fr;gap:0 20px;font-size:14px;line-height:1.7;padding:5px 0}
 .cvy{letter-spacing:.04em;color:var(--sub)}
+/* 行頭の「（ の左側の空きを詰めて、文字の頭を縦にそろえる（折り返した行も対象） */
+.cvt{text-spacing-trim:trim-start}
+@supports not (text-spacing-trim:trim-start){ .cvt .openp{margin-left:-.5em} }
 
 
 .years{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:28px}
