@@ -704,13 +704,6 @@ window.WORKS=[
   "enMore": "As I began my graduation work, I had one question.\nThe power is connected to the projector, and the image is output. Sound comes out too. Viewing is made possible only when every small condition is met. But could a situation in which the image stops or the sound does not play also open up new possibilities as a work? In other words, I would treat obstacles to viewing as the subject of the work itself and pose a question to the viewer.\n\nTo make this possible, I filmed a fictional interview of myself and, through editing, wove effects such as a projector's stop screen and sound that suddenly disappears as if broken into the seven-minute interview.\nFor the viewer, my interview cannot be seen. Small noises are amplified, shutting the viewer outside the screen out of normal viewing. At that moment, they face the utterly obvious question that is the subject of this work: \"What is seeing?\"\n\nThe monologue I speak in the work sounds like a mere personal story, yet it is connected to the content of the video itself. Talking about the uncertainty of vision, \"poor eyesight\" and \"seeing things wrongly,\" it was made to function as a metaphor pointing to the structural flaws of the medium of video itself.\nThis is a video-based practice of the \"tautology\" used by the conceptual artist Jiro Takamatsu in \"These Seven Characters,\" in which the words \"these seven characters\" themselves explain what the work is. Just as Takamatsu used characters to point to where the characters themselves are, I make content and form coincide self-referentially by \"making invisible (stopping)\" the very video that speaks of \"the uncertainty of seeing.\"\n\nDoubt about \"seeing\" is voiced in the video, and at the same time the image itself is physically cut off. Through this double structure, the blue screen, which viewers at first took for an equipment malfunction (an accident), is suggested after the fact to have been a carefully calculated fiction (a necessary effect).\nI, speaking about \"seeing,\" obstruct the viewer's \"seeing.\" This self-referential loop is my own answer for critically taking apart the fictionality inherent in video media and the gaze of viewers who accept it uncritically.",
   "images": [
    {
-    "src": "images/interview/01.jpg",
-    "cap": [
-     "",
-     ""
-    ]
-   },
-   {
     "src": "images/interview/02.jpg",
     "cap": [
      "",
