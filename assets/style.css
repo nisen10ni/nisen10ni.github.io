@@ -60,6 +60,12 @@ a{text-decoration:none}
 .dl dt{font-size:10px;letter-spacing:.2em;color:var(--mute);padding-top:2px}
 .dl dd{line-height:1.9}
 .yr{display:inline-block;min-width:44px;color:var(--mute)}
+/* 略歴：見出し＋「年｜内容」の2列リスト */
+.cv{margin-top:72px;max-width:960px}
+.cv h4{font-size:22px;font-weight:400;letter-spacing:.04em;margin:72px 0 28px}
+.cv h4:first-child{margin-top:0}
+.cvrow{display:grid;grid-template-columns:150px 1fr;gap:0 24px;font-size:15px;line-height:1.7;padding:6px 0}
+.cvy{letter-spacing:.04em;color:var(--sub)}
 
 
 .years{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:28px}
@@ -166,6 +172,9 @@ a{text-decoration:none}
   .dl,.contact .row,.essays a{grid-template-columns:1fr;gap:6px}
   .yearttl{font-size:40px}
   .gthumb{width:56px;height:42px}
+  .cv{margin-top:56px}
+  .cv h4{font-size:18px;margin:52px 0 18px}
+  .cvrow{grid-template-columns:52px 1fr;gap:0 14px;font-size:14px}
   .mbody{font-size:14px;line-height:1.95}
   .mmeta{flex-direction:column;align-items:flex-start;gap:12px}
   .mmeta .mt{font-size:22px;line-height:1.5}

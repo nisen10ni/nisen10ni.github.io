@@ -17,9 +17,9 @@
       <h3 id="aboutName"></h3>
       <div class="subname" id="aboutSub"></div>
       <p class="bio" id="aboutBio"></p>
-      <dl class="dl" id="profileDL"></dl>
     </div>
   </div>
+  <div class="cv" id="cv"></div>
 </section>
 </div>
 <script src="assets/data.js"></script>
@@ -33,9 +33,17 @@ $('#aboutSub').textContent=TT.subname;
 $('#aboutBio').textContent=TT.bio;
 $('#portraitImg').alt=TT.portraitAlt;
 document.documentElement.lang=lang==='jp'?'ja':'en';
-const dl=$('#profileDL');
+// 略歴：見出しの下に「年｜内容」の2列で並べる（同じ年が続くときは2行目以降の年を省略）
+const cv=$('#cv');
 TT.dl.forEach(([k,vals])=>{
-  dl.insertAdjacentHTML('beforeend',`<dt>${k}</dt><dd>${vals.map(v=>v.replace(/^(\d{4})/,'<span class="yr">$1</span>')).join('<br>')}</dd>`);
+  let prev='';
+  const rows=vals.map(v=>{
+    const m=v.match(/^(\d{4})[\s　]+(.*)$/);
+    const y=m?m[1]:'', txt=m?m[2]:v;
+    const show=y&&y!==prev?y:''; if(y)prev=y;
+    return `<div class="cvrow"><div class="cvy">${show}</div><div class="cvt">${txt}</div></div>`;
+  }).join('');
+  cv.insertAdjacentHTML('beforeend',`<h4>${k}</h4><div class="cvlist">${rows}</div>`);
 });
 </script>
 </body>
